@@ -1,0 +1,119 @@
+<style>
+  @keyframes marquee {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 5s linear infinite;
+  }
+
+  /* Updated styles for expired and active states */
+  .expired-message {
+    background-color: #ffcccc;
+    color: #b30000;
+  }
+
+  .active-message {
+    background-color: #b3e6ff;
+    color: #0066cc;
+  }
+
+  .disabled-btn {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+</style>
+
+<div class="content-wrap">
+  <div class="main">
+    <div class="container">
+      <div style="min-height: 700px; background-color: #0c4872">
+        <!-- Section 1: Navbar -->
+        <div class="d-flex justify-content-end items-center">
+          <span class="nav-link nav-item">
+            {{ frappe.db.get_value("User", frappe.session.user, "full_name") }}
+          </span>
+          <button class="ml-3 mr-5 btn nav-link nav-item" onclick="frappe.app.logout()">
+            Logout
+          </button>
+          <div class="dropdown nav-item">
+            <a style="color: #fff" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Profile
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button class="dropdown-item" onclick="frappe.ui.toolbar.route_to_user()">
+                My Settings
+              </button>
+              <button class="dropdown-item" onclick="frappe.ui.toolbar.clear_cache()">
+                Reload
+              </button>
+            </div>
+          </div>
+
+          <!-- chat -->
+          <div class="nav-item dropdown dropdown-notifications dropdown-mobile chat-navbar-icon">
+            <button class="btn btn-primary" style="color: white; background-color: #0c4872; border: none" id="chatButton">
+              <i class="fas fa-comments"></i> Chat
+            </button>
+            <span class="badge" id="chat-notification-count"></span>
+          </div>
+          <!-- chat -->
+        </div>
+
+        <!-- System Expiration Message -->
+        <!-- <div class="w-full max-w-[95%] sm:max-w-[90%] mt-[50px] lg:mt-[25px] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] mx-auto text-center py-4 mb-4 rounded overflow-hidden whitespace-nowrap">
+          <span class="inline-block animate-marquee pl-[30%]" id="messageSpan">
+           
+          </span>
+        </div> -->
+
+        {% if is_expired %}
+        <div class="w-full max-w-[95%] sm:max-w-[90%] mt-[50px] lg:mt-[25px] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] mx-auto expired-message text-center py-4 mb-4 rounded overflow-hidden whitespace-nowrap">
+          <span class="inline-block animate-marquee pl-[30%]" id="messageSpan">
+           {{message}} 
+          </span>
+        </div>
+        {% else %}
+        <div class="w-full max-w-[95%] sm:max-w-[90%] mt-[50px] lg:mt-[25px] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] mx-auto active-message text-center py-4 mb-4 rounded overflow-hidden whitespace-nowrap">
+          <span class="inline-block animate-marquee pl-[30%]" id="messageSpan">
+            {{ message }}  
+          </span>
+        </div>
+        {% endif %}
+
+        <!-- Section 2: App Buttons -->
+        <section class="flex items-center justify-center mt-20 mb-20">
+          <div class="sec_2 grid md:grid-cols-5 gap-5 flex">
+            {% for d in data %}
+            <div class="app_btn justify-center {{ 'disabled-btn' if is_expired else '' }}" id="{{ d.name }}">
+              <div class="bof bg-[{{ d.color }}] w-20 h-16 flex justify-center items-center rounded-lg">
+                <i class="fas {{ d.icon }} text-white fa-lg"></i>
+              </div>
+              <h1 class="pl-2 pt-2">{{ d.label }}</h1>
+            </div>
+            {% endfor %}
+
+            <!-- {% for d in data %}
+            <div class="app_btn justify-center" id="{{ d.name }}">
+              <div class="bof bg-[{{ d.color }}] w-20 h-16 flex justify-center items-center rounded-lg">
+                <i class="fas {{ d.icon }} text-white fa-lg"></i>
+              </div>
+              <h1 class="pl-2 pt-2">{{ d.label }}</h1>
+            </div>
+            {% endfor %} -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+  let isExpired = "{{ is_expired }}";
+  // You can add JavaScript logic here if needed based on whether the system is expired
+</script> -->

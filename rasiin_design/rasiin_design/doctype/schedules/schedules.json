@@ -1,0 +1,267 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-20 12:13:47.825595",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "designation",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "30",
+  "31"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "1",
+   "fieldtype": "Link",
+   "label": "1",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "2",
+   "fieldtype": "Link",
+   "label": "2",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "3",
+   "fieldtype": "Link",
+   "label": "3",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "4",
+   "fieldtype": "Link",
+   "label": "4",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "5",
+   "fieldtype": "Link",
+   "label": "5",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "6",
+   "fieldtype": "Link",
+   "label": "6",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "7",
+   "fieldtype": "Link",
+   "label": "7",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "8",
+   "fieldtype": "Link",
+   "label": "8",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "9",
+   "fieldtype": "Link",
+   "label": "9",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "10",
+   "fieldtype": "Link",
+   "label": "10",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "11",
+   "fieldtype": "Link",
+   "label": "11",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "12",
+   "fieldtype": "Link",
+   "label": "12",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "13",
+   "fieldtype": "Link",
+   "label": "13",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "14",
+   "fieldtype": "Link",
+   "label": "14",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "15",
+   "fieldtype": "Link",
+   "label": "15",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "16",
+   "fieldtype": "Link",
+   "label": "16",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "17",
+   "fieldtype": "Link",
+   "label": "17",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "18",
+   "fieldtype": "Link",
+   "label": "18",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "19",
+   "fieldtype": "Link",
+   "label": "19",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "20",
+   "fieldtype": "Link",
+   "label": "20",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "21",
+   "fieldtype": "Link",
+   "label": "21",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "22",
+   "fieldtype": "Link",
+   "label": "22",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "24",
+   "fieldtype": "Link",
+   "label": "24",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "25",
+   "fieldtype": "Link",
+   "label": "25",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "26",
+   "fieldtype": "Link",
+   "label": "26",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "27",
+   "fieldtype": "Link",
+   "label": "27",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "28",
+   "fieldtype": "Link",
+   "label": "28",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "29",
+   "fieldtype": "Link",
+   "label": "29",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "30",
+   "fieldtype": "Link",
+   "label": "30",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "31",
+   "fieldtype": "Link",
+   "label": "31",
+   "options": "Shift Type"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "23",
+   "fieldtype": "Link",
+   "label": "23",
+   "options": "Shift Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-03-29 15:13:45.593267",
+ "modified_by": "Administrator",
+ "module": "Rasiin Design",
+ "name": "Schedules",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
